@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
 
-void main() => runApp(WaterRoutine());
-
-class WaterRoutine extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
+void main() => runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Water Routine',
+      home: HomeScreen(),
+    ));
