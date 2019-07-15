@@ -26,64 +26,62 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Expanded(
-                flex: 242,
+                flex: 30,
                 child: TodayProgressCard(),
               ),
               Expanded(
-                flex: 43,
+                flex: 6,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
                   child: Text(
                     'The next drink is in 00:17:00',
                     style: TextStyle(
-                      fontSize: 25.0,
+                      fontSize: screenHeight <= 568.0 ? 20 : 25.0,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
               ),
-              Expanded(
-                flex: 130,
+              Flexible(
+                flex: 14,
                 child: Container(
                   height: 100.0,
                   width: 250.0,
-                  child: Card(
-                    color: Colors.white,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Icon(
-                          Icons.receipt,
-                          color: Colors.blue,
-                          size: 30.0,
-                        ),
-                        Icon(
-                          Icons.receipt,
-                          color: Colors.green,
-                          size: 50.0,
-                        ),
-                        Icon(
-                          Icons.receipt,
-                          color: Colors.blue,
-                          size: 70.0,
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Icon(
+                        Icons.receipt,
+                        color: Colors.blue,
+                        size: 30.0,
+                      ),
+                      Icon(
+                        Icons.receipt,
+                        color: Colors.green,
+                        size: 50.0,
+                      ),
+                      Icon(
+                        Icons.receipt,
+                        color: Colors.blue,
+                        size: 70.0,
+                      ),
+                    ],
                   ),
                   decoration: BoxDecoration(
+                      color: Colors.white,
                       borderRadius: BorderRadius.all(
-                        Radius.circular(25.0),
+                        Radius.circular(21),
                       ),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.white70,
-                          blurRadius: 50.0,
+                          color: Colors.black12,
+                          blurRadius: 30.0,
                         )
                       ]),
                 ),
               ),
               Expanded(
-                flex: 122,
+                flex: 16,
                 child: Column(
                   children: <Widget>[
                     ListTile(

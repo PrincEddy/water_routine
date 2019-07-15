@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
+double screenHeight = 0;
+
 class TodayProgressCard extends StatelessWidget {
   const TodayProgressCard({
     Key key,
@@ -8,13 +10,15 @@ class TodayProgressCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    screenHeight = MediaQuery.of(context).size.height;
+    print(screenHeight);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: CircularPercentIndicator(
-            radius: 230.0,
+            radius: screenHeight <= 568 ? 185.0 : 230.0,
             lineWidth: 15.0,
             percent: 0.50,
             animation: true,
@@ -24,13 +28,15 @@ class TodayProgressCard extends StatelessWidget {
             backgroundColor: Colors.blue,
             //fillColor: Colors.white,
             center: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: screenHeight <= 568
+                  ? MainAxisAlignment.spaceEvenly
+                  : MainAxisAlignment.spaceAround,
               children: <Widget>[
                 SizedBox(),
                 Text(
                   'Done',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -39,15 +45,16 @@ class TodayProgressCard extends StatelessWidget {
                   '2000mls',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 40.0,
+                    fontSize: screenHeight <= 568 ? 30 : 40.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(),
                 Text(
                   'target:3000mls',
                   style: TextStyle(
                     color: Colors.red,
-                    fontSize: 20.0,
+                    fontSize: screenHeight <= 568 ? 14 : 20.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
