@@ -16,9 +16,9 @@ class TodayProgressCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top: 20.0),
+          padding: EdgeInsets.only(top: screenHeight <= 568.0 ? 11 : 20.0),
           child: CircularPercentIndicator(
-            radius: screenHeight <= 568 ? 185.0 : 230.0,
+            radius: screenHeight <= 568 ? 172.0 : 230.0,
             lineWidth: 15.0,
             percent: 0.50,
             animation: true,
@@ -26,7 +26,7 @@ class TodayProgressCard extends StatelessWidget {
             animateFromLastPercent: true,
             progressColor: Color(0xFF31FF00),
             backgroundColor: Colors.blue,
-            //fillColor: Colors.white,
+            //fillColor: Colors.blue,
             center: Column(
               mainAxisAlignment: screenHeight <= 568
                   ? MainAxisAlignment.spaceEvenly

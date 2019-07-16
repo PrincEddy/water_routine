@@ -1,32 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:water_routine/components/today_progress_component.dart';
 
+bool isEmpty = true;
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('images/Home.png'),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          backgroundColor: Color(0xFF0031FF),
-          title: Text(
-            'Today',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      appBar: AppBar(
+        backgroundColor: Color(0xFF0031FF),
+        title: Text(
+          'Today',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
           ),
         ),
-        body: Container(
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/Home.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Container(
           child: Column(
             children: <Widget>[
               Expanded(
-                flex: 30,
+                flex: screenHeight <= 568.0 ? 25 : 35,
                 child: TodayProgressCard(),
               ),
               Expanded(
@@ -43,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex: 14,
+                flex: screenHeight <= 568.0 ? 10 : 14,
                 child: Container(
                   height: 100.0,
                   width: 250.0,
@@ -81,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 16,
+                flex: 15,
                 child: Column(
                   children: <Widget>[
                     ListTile(
