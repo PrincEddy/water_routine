@@ -2,19 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class TodayProgressCard extends StatelessWidget {
-  const TodayProgressCard({
-    Key key,
-  }) : super(key: key);
+  TodayProgressCard({@required this.halfSizeOfBody});
+  final double halfSizeOfBody;
 
   @override
   Widget build(BuildContext context) {
+    double blockSize = halfSizeOfBody / 100;
+
+    double circlePaddingTop = blockSize * 12;
+    double radiusOfTheCircle = blockSize * 53;
+    print(radiusOfTheCircle);
+    print(circlePaddingTop);
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top: 20.0),
+          padding: EdgeInsets.only(top: circlePaddingTop),
           child: CircularPercentIndicator(
-            radius: 230.0,
+            radius: radiusOfTheCircle <= 140 ? 165 : 210,
             lineWidth: 15.0,
             percent: 0.50,
             animation: true,
@@ -22,7 +28,6 @@ class TodayProgressCard extends StatelessWidget {
             animateFromLastPercent: true,
             progressColor: Color(0xFF31FF00),
             backgroundColor: Colors.blue,
-            //fillColor: Colors.white,
             center: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
@@ -30,15 +35,15 @@ class TodayProgressCard extends StatelessWidget {
                 Text(
                   'Done',
                   style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20.0,
+                    color: Color(0xFF707070),
+                    fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   '2000mls',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xFF707070),
                     fontSize: 40.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -46,7 +51,7 @@ class TodayProgressCard extends StatelessWidget {
                 Text(
                   'target:3000mls',
                   style: TextStyle(
-                    color: Colors.red,
+                    color: Color(0xFF707070),
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
