@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'package:water_routine/components/navigation_component.dart';
+import 'history_screen.dart';
+import 'settings_screen.dart';
 
 class NavigationScreen extends StatefulWidget {
   @override
@@ -11,9 +13,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   Widget build(BuildContext context) {
     List<Widget> optionBottomNavSelection = [
-      Container(),
+      HistoryScreen(),
       HomeScreen(),
-      Container()
+      SettingScreen()
     ];
     return Scaffold(
       backgroundColor: Colors.transparent,

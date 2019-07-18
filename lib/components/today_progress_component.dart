@@ -11,8 +11,6 @@ class TodayProgressCard extends StatelessWidget {
 
     double circlePaddingTop = blockSize * 12;
     double radiusOfTheCircle = blockSize * 53;
-    print(radiusOfTheCircle);
-    print(circlePaddingTop);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

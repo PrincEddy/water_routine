@@ -3,7 +3,7 @@ import 'screens/bottom_navigation_screen.dart';
 
 void main() => runApp(MaterialApp(
       theme: ThemeData.light().copyWith(
-        //primaryColor: Colors.transparent,
+        primaryColor: Color(0xFF0031FF),
         //scaffoldBackgroundColor: Colors.transparent,
         canvasColor: Color(0xFF0031FF),
       ),

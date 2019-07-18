@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:water_routine/components/today_progress_component.dart';
 
+double halfHeight;
+
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appBar = AppBar();
-    double halfHeight = (MediaQuery.of(context).size.height -
+    halfHeight = (MediaQuery.of(context).size.height -
             (appBar.preferredSize.height * 2)) /
         2;
-    print(appBar.preferredSize.height);
-    print('halfHieght=$halfHeight');
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
